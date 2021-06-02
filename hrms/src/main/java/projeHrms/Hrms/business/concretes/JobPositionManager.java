@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import projeHrms.Hrms.business.abstracts.JobPositionService;
+import projeHrms.Hrms.core.utilities.results.DataResult;
+import projeHrms.Hrms.core.utilities.results.SuccessDataResult;
 import projeHrms.Hrms.dataAccess.abstracts.JobPositionDao;
 import projeHrms.Hrms.entities.concretes.JobPosition;
 
@@ -21,8 +23,8 @@ public class JobPositionManager implements JobPositionService {
 	}
 
 	@Override
-	public List<JobPosition> getAll() {
-		return this.jobPositionDao.findAll();
+	public DataResult<List<JobPosition>> getAll() {
+		return new SuccessDataResult<List<JobPosition>>(this.jobPositionDao.findAll(),"Data listelendi");
 	}
 	
 }
