@@ -31,7 +31,7 @@ public class JobPositionManager implements JobPositionService {
 	}
 
 	@Override
-	public Result add(JobPosition jobPosition) {
+	public Result add(JobPosition jobPosition) { 
 		
 		Result result = isPositionExist(jobPosition.getTitle());
 		

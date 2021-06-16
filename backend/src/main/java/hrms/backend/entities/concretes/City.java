@@ -9,48 +9,45 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.sun.istack.NotNull;
 
 @Entity
-@Table(name="job_positions")
+@Table(name="cities")
 @JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobAdvertisements"})
-public class JobPosition {
+public class City {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private int id;
 	
-	@NotBlank
-	@Column(name="title")
-	private String title;
+	@NotNull
+	@Column(name="cities")
+	private String cities;
 
-	@OneToMany(mappedBy = "jobPosition")
+	@OneToMany(mappedBy = "city")
     private List<JobAdvertisement> jobAdvertisements;
 	
-	public JobPosition() {
+	public City() {
 		
 	}
 	
-	public JobPosition(String title) {
+	public City(String cities) {
 		super();
-		this.title = title;
+		this.cities = cities;
 	}
 
 	public int getId() {
 		return id;
-	} 
-
-	public String getTitle() {
-		return title;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public String getCities() {
+		return cities;
 	}
-	
-	
-	
+
+	public void setCities(String cities) {
+		this.cities = cities;
+	}
 }

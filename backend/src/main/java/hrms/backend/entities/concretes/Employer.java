@@ -1,17 +1,22 @@
 package hrms.backend.entities.concretes;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
+
 
 @Entity
 @Table(name="employers")
-
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobAdvertisements"})
 public class Employer{
 	
 	@Id
@@ -33,6 +38,9 @@ public class Employer{
 	@Size(max = 15)
 	@Column(name = "phone")
 	private String phone;
+	
+	@OneToMany(mappedBy = "employer")
+    private List<JobAdvertisement> jobAdvertisements;
 	
 	public Employer() {
 		

@@ -74,6 +74,5 @@ public class EmployerManager implements EmployerService {
 	public DataResult<List<Employer>> getAll() {
 		return new SuccessDataResult<List<Employer>>(this.employerDao.findAll(),"Data listelendi");
 	}
-
 	
 }

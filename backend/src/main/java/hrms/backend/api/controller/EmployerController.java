@@ -34,7 +34,7 @@ public class EmployerController {
 	}
 	
 	@PostMapping("/register")
-	public Result  register(@RequestBody final EmployerForRegisterDto employerForRegisterDto){
+	public Result  register(@RequestBody EmployerForRegisterDto employerForRegisterDto){
 		final Result result =  new EmployerValidator().control(employerForRegisterDto);
 		
 		if(result.isSuccess()==true)
@@ -42,5 +42,4 @@ public class EmployerController {
 		
 		return result;	
 	}
-	
 }

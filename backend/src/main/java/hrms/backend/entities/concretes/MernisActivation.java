@@ -9,7 +9,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name="mernis_Activations")
+@Table(name="mernis_activations")
 public class MernisActivation {
 	
 	@Id
