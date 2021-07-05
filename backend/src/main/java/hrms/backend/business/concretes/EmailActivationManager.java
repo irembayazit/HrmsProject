@@ -36,10 +36,10 @@ public class EmailActivationManager implements EmailActivationService{
 		try {		
 			
 			// e-postayı göndereceğiniz adres
-			String from = "mavis.irem34@gmail.com";
+			String from = "";
 			
 			// hesabınızın parolası
-			String pass = "karadeniz61";
+			String pass = "";
 			
 			// e-postanın gönderileceği adresler
 			String[] to = { "mavis.irem34@gmail.com" };

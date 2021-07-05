@@ -11,4 +11,5 @@ public interface JobSeekerService {
 	DataResult<List<JobSeeker>> getAll();
 	Result register(JobSeekerForRegisterDto jobSeekerForRegisterDto);
 	Result isIdentityNumberExist(final String identityNumber);
+	DataResult<JobSeeker> getByUserId(int id);
 }

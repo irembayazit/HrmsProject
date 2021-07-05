@@ -13,20 +13,8 @@ public class JobSeekerValidator{
 		String password = dto.getPassword();
 		String passwordAgain = dto.getPasswordAgain();
 		
-		if(dto.getEmail().isEmpty()) {
-			return new ErrorResult("Email kısmı geçilemez");
-		}
-		if(dto.getName().isEmpty()) {
-			return new ErrorResult("İsim alanı bos geçilemez");
-		}
-		if(dto.getSurname().isEmpty()) {
-			return new ErrorResult("Soyisim alanı bos geçilemez");
-		}
-		if(dto.getIdentityNumber().isEmpty()|| dto.getIdentityNumber().length()!=11) {
+		if(dto.getIdentityNumber().length()!=11) {
 			return new ErrorResult("Lütfen geçerli bir kimlik no giriniz");
-		}
-		if(dto.getPassword().isEmpty()) {
-			return new ErrorResult("Şifre alanı boş geçilemez");
 		}
 		if(password.equals(passwordAgain)==false) {
 			return new ErrorResult("Şifreler aynı değil");
