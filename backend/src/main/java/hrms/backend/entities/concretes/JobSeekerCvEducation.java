@@ -56,11 +56,11 @@ public class JobSeekerCvEducation {
 		this.graduationYear = graduationYear;
 	}
 
-	public JobSeeker getJobSeekerId() {
+	public JobSeeker setJobSeeker() {
 		return jobSeeker;
 	}
 
-	public void setJobSeekerId(JobSeeker jobSeeker) {
+	public void setJobSeeker(JobSeeker jobSeeker) {
 		this.jobSeeker = jobSeeker;
 	}
 

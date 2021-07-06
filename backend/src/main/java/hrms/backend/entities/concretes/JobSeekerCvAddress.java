@@ -44,11 +44,11 @@ public class JobSeekerCvAddress{
 		this.linkedin = linkedin;
 	}
 
-	public JobSeeker getJobSeekerId() {
+	public JobSeeker setJobSeeker() {
 		return jobSeeker;
 	}
 
-	public void setJobSeekerId(JobSeeker jobSeeker) {
+	public void setJobSeeker(JobSeeker jobSeeker) {
 		this.jobSeeker = jobSeeker;
 	}
 

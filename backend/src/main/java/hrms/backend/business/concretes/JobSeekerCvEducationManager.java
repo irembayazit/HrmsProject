@@ -29,7 +29,7 @@ public class JobSeekerCvEducationManager implements JobSeekerCvEducationService{
 	}
 
 	@Override
-	public DataResult<List<JobSeekerCvEducation>> findAllByJobSeeker_UserIdOrderByGraduationYearDesc(int userId) {
+	public DataResult<List<JobSeekerCvEducation>> findAllByJobSeekerCv_UserIdOrderByGraduationYearDesc(int userId) {
 		
 		List<JobSeekerCvEducation> jobSeekerCVEducations = this.educationDao.findAllByJobSeeker_UserIdOrderByGraduationYearDesc(userId);
 		
@@ -42,6 +42,11 @@ public class JobSeekerCvEducationManager implements JobSeekerCvEducationService{
 		}
 				
 		return new SuccessDataResult<List<JobSeekerCvEducation>>(jobSeekerCVEducations);
+	}
+
+	@Override
+	public DataResult<List<JobSeekerCvEducation>> getByJobSeeker_UserId(int userId) {
+		return new SuccessDataResult<List<JobSeekerCvEducation>>(educationDao.getByJobSeeker_UserId(userId));
 	}
 
 	

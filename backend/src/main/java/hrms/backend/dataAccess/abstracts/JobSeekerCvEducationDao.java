@@ -10,4 +10,5 @@ import hrms.backend.entities.concretes.JobSeekerCvEducation;
 public interface JobSeekerCvEducationDao extends JpaRepository<JobSeekerCvEducation, Integer>{
 	
 	List<JobSeekerCvEducation> findAllByJobSeeker_UserIdOrderByGraduationYearDesc(int userId);
+	List<JobSeekerCvEducation> getByJobSeeker_UserId(int userId);
 }

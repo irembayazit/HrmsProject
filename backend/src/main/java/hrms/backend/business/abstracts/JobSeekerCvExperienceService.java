@@ -9,5 +9,6 @@ import hrms.backend.entities.concretes.JobSeekerCvExperience;
 public interface JobSeekerCvExperienceService {
 	
 	Result add(JobSeekerCvExperience cvExperience);
-	DataResult<List<JobSeekerCvExperience>>  findAllByJobSeeker_UserIdOrderByEndYearDesc(int userId);
+	DataResult<List<JobSeekerCvExperience>>  findAllByJobSeekerCv_UserIdOrderByEndYearDesc(int userId);
+	DataResult<List<JobSeekerCvExperience>> getByJobSeeker_UserId(int userId);
 }

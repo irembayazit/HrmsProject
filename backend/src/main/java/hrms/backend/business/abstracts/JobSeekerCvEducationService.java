@@ -9,7 +9,7 @@ import hrms.backend.entities.concretes.JobSeekerCvEducation;
 public interface JobSeekerCvEducationService {
 
 	Result add(JobSeekerCvEducation cvEducation);
-	DataResult<List<JobSeekerCvEducation>>  findAllByJobSeeker_UserIdOrderByGraduationYearDesc(int userId);
-	
+	DataResult<List<JobSeekerCvEducation>>  findAllByJobSeekerCv_UserIdOrderByGraduationYearDesc(int userId);
+	DataResult<List<JobSeekerCvEducation>> getByJobSeeker_UserId(int userId);
 }
  

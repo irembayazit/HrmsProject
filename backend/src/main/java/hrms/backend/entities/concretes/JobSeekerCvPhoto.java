@@ -42,7 +42,7 @@ public class JobSeekerCvPhoto {
 		this.url = url;
 	}
 
-	public JobSeeker getJobSeeker() {
+	public JobSeeker setJobSeeker() {
 		return jobSeeker;
 	}
 

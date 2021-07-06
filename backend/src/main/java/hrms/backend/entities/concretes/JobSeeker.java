@@ -13,8 +13,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
-
-
 @Entity
 @Table(name="job_seekers")
 public class JobSeeker {
@@ -43,25 +41,25 @@ public class JobSeeker {
 	private LocalDate birthDate;
 	
 	@OneToMany(mappedBy = "jobSeeker")
-	private List<JobSeekerCvCoverLetter> coverLetters;
+	private List<JobSeekerCvAddress> jobSeekerCvAddress;
 	
 	@OneToMany(mappedBy = "jobSeeker")
-	private List<JobSeekerCvEducation> educations;
+	private List<JobSeekerCvCoverLetter> jobSeekerCvCoverLetter;
 	
 	@OneToMany(mappedBy = "jobSeeker")
-	private List<JobSeekerCvExperience> experiences;
+	private List<JobSeekerCvEducation> jobSeekerCvEducation;
 	
 	@OneToMany(mappedBy = "jobSeeker")
-	private List<JobSeekerCvLanguage> language;
+	private List<JobSeekerCvExperience> jobSeekerCvExperience;
 	
 	@OneToMany(mappedBy = "jobSeeker")
-	private List<JobSeekerCvAddress> links;
+	private List<JobSeekerCvLanguage> jobSeekerCvLanguage;
 	
 	@OneToMany(mappedBy = "jobSeeker")
-	private List<JobSeekerCvPhoto> photos;
+	private List<JobSeekerCvPhoto> jobSeekerCvPhoto;
 	
 	@OneToMany(mappedBy = "jobSeeker")
-	private List<JobSeekerCvSkill> skills;
+	private List<JobSeekerCvSkill> jobSeekerCvSkill;
 
 	public JobSeeker(){
 		

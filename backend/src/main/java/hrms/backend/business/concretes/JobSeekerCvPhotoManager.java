@@ -1,5 +1,6 @@
 package hrms.backend.business.concretes;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,10 +9,13 @@ import org.springframework.web.multipart.MultipartFile;
 
 import hrms.backend.business.abstracts.JobSeekerCvPhotoService;
 import hrms.backend.core.utilities.helpers.CloudinaryImageService;
+import hrms.backend.core.utilities.results.DataResult;
 import hrms.backend.core.utilities.results.Result;
+import hrms.backend.core.utilities.results.SuccessDataResult;
 import hrms.backend.core.utilities.results.SuccessResult;
 import hrms.backend.dataAccess.abstracts.JobSeekerCvPhotoDao;
 import hrms.backend.dataAccess.abstracts.JobSeekerDao;
+import hrms.backend.entities.concretes.JobSeekerCvLanguage;
 import hrms.backend.entities.concretes.JobSeekerCvPhoto;
 
 @Service
@@ -41,6 +45,12 @@ public class JobSeekerCvPhotoManager implements JobSeekerCvPhotoService{
 		cvPhoto.setUrl(uploadImage.get("url").toString());		
 		this.jobSeekerCvPhotoDao.save(cvPhoto);		
 		return new SuccessResult("eklendi");		
+	}
+
+
+	@Override
+	public DataResult<List<JobSeekerCvPhoto>> getByJobSeeker_UserId(int userId) {
+		return new SuccessDataResult<List<JobSeekerCvPhoto>>(jobSeekerCvPhotoDao.getByJobSeeker_UserId(userId));
 	}
 
 	

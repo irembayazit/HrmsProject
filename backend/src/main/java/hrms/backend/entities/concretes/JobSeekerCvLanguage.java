@@ -49,11 +49,11 @@ public class JobSeekerCvLanguage {
 		this.level = level;
 	}
 
-	public JobSeeker getJobSeekerId() {
+	public JobSeeker setJobSeeker() {
 		return jobSeeker;
 	}
 
-	public void setJobSeekerId(JobSeeker jobSeeker) {
+	public void setJobSeeker(JobSeeker jobSeeker) {
 		this.jobSeeker = jobSeeker;
 	}
 

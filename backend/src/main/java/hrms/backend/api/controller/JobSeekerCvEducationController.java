@@ -1,6 +1,7 @@
 package hrms.backend.api.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.validation.Valid;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import hrms.backend.business.abstracts.JobSeekerCvEducationService;
+import hrms.backend.core.utilities.results.DataResult;
 import hrms.backend.core.utilities.results.ErrorDataResult;
 import hrms.backend.entities.concretes.JobSeekerCvEducation;
 
@@ -42,8 +44,14 @@ public class JobSeekerCvEducationController {
 	
 	@GetMapping("/getSchoolNameDesc")
 	public ResponseEntity<?> SchoolNameDesc(@RequestParam int userId){
-		return ResponseEntity.ok(this.cvEducationService.findAllByJobSeeker_UserIdOrderByGraduationYearDesc(userId));
+		return ResponseEntity.ok(this.cvEducationService.findAllByJobSeekerCv_UserIdOrderByGraduationYearDesc(userId));
 	}
+	
+	@GetMapping(value = "/getById")
+	public DataResult<List<JobSeekerCvEducation>> getById(int userId){
+		return this.cvEducationService.getByJobSeeker_UserId(userId);
+	}
+	
 	
 	
 	@ExceptionHandler(MethodArgumentNotValidException.class)

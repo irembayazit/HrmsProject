@@ -9,6 +9,6 @@ import hrms.backend.entities.concretes.JobSeekerCvExperience;
 public interface JobSeekerCvExperienceDao extends JpaRepository<JobSeekerCvExperience, Integer>{
 	
 	List<JobSeekerCvExperience> findAllByJobSeeker_UserIdOrderByEndYearDesc(int userId);
-	
+	List<JobSeekerCvExperience> getByJobSeeker_UserId(int userId);
 	
 }

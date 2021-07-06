@@ -23,6 +23,7 @@ import hrms.backend.business.abstracts.UserService;
 import hrms.backend.core.utilities.results.DataResult;
 import hrms.backend.core.utilities.results.ErrorDataResult;
 import hrms.backend.entities.concretes.User;
+import hrms.backend.entities.dtos.CvDto;
 
 
 
@@ -48,8 +49,15 @@ public class UsersController {
 	public ResponseEntity<?> add(@Valid @RequestBody User user){
 		
 		return ResponseEntity.ok(this.userService.add(user));
-		
 	}
+	
+	
+	@GetMapping(value = "/cvDetailsGetUserId")
+	public DataResult<CvDto> cvDetailsGetUserId(int userId){
+		return this.userService.CvDetailsGetByUSerId(userId);
+	}
+	
+	
 	
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	@ResponseStatus(HttpStatus.BAD_REQUEST)

@@ -31,7 +31,7 @@ public class JobSeekerCvExperienceManager implements JobSeekerCvExperienceServic
 	}
 
 	@Override
-	public DataResult<List<JobSeekerCvExperience>> findAllByJobSeeker_UserIdOrderByEndYearDesc(int userId) {
+	public DataResult<List<JobSeekerCvExperience>> findAllByJobSeekerCv_UserIdOrderByEndYearDesc(int userId) {
 		
 		List<JobSeekerCvExperience> cvExperiences = this.cvExperienceDao.findAllByJobSeeker_UserIdOrderByEndYearDesc(userId);
 		
@@ -42,6 +42,11 @@ public class JobSeekerCvExperienceManager implements JobSeekerCvExperienceServic
 		}
 		
 		return new SuccessDataResult<List<JobSeekerCvExperience>>(cvExperiences);
+	}
+
+	@Override
+	public DataResult<List<JobSeekerCvExperience>> getByJobSeeker_UserId(int userId) {
+		return new SuccessDataResult<List<JobSeekerCvExperience>>(cvExperienceDao.getByJobSeeker_UserId(userId));
 	}
 	
 	

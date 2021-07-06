@@ -13,7 +13,7 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="job_seeker_CV_cover_letters")  
+@Table(name="job_seeker_cv_cover_letters")  
 @AllArgsConstructor
 @NoArgsConstructor
 public class JobSeekerCvCoverLetter {
@@ -44,11 +44,11 @@ public class JobSeekerCvCoverLetter {
 		return id;
 	}
 
-	public JobSeeker getJobSeekerId() {
+	public JobSeeker setJobSeeker() {
 		return jobSeeker;
 	}
 
-	public void setJobSeekerId(JobSeeker jobSeeker) {
+	public void setJobSeeker(JobSeeker jobSeeker) {
 		this.jobSeeker = jobSeeker;
 	}
 

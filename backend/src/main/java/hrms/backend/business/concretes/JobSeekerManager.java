@@ -17,6 +17,7 @@ import hrms.backend.core.utilities.results.Result;
 import hrms.backend.core.utilities.results.SuccessDataResult;
 import hrms.backend.core.utilities.results.SuccessResult;
 import hrms.backend.dataAccess.abstracts.JobSeekerDao;
+import hrms.backend.dataAccess.abstracts.UserDao;
 import hrms.backend.entities.concretes.JobSeeker;
 import hrms.backend.entities.concretes.User;
 import hrms.backend.entities.dtos.JobSeekerForRegisterDto;
